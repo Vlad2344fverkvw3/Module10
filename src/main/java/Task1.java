@@ -21,6 +21,7 @@ public class Task1 {
         Matcher matcher = pattern.matcher(stringBuilder);
         while (matcher.find()) {
             System.out.println(matcher.group());
+
         }
     }
 }

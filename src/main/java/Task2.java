@@ -73,6 +73,7 @@ class Test2 {
         String jsonList = gson.toJson(task2.getFromString(task2.readDateFromFile()));
         System.out.println("jsonList = " + jsonList);
         task2.saveToJson(jsonList, Path.of("users.json"));
+
     }
 
 }
