@@ -32,12 +32,10 @@ public class Task2 {
         Pattern pattern = Pattern.compile("([A-Za-zА-Яа-я]+) (\\d+)");
         Matcher matcher = pattern.matcher(line);
         while (matcher.find()) {
-
             list.add(new User(matcher.group(1), Byte.parseByte(matcher.group(2))));
         }
         return list;
     }
-
     public void saveToJson(String jsonString, Path whereSave) {
         try {
             Files.write(whereSave, jsonString.getBytes());
@@ -68,14 +66,12 @@ class User {
 class Test2 {
     public static void main(String[] args)  {
         Task2 task2 = new Task2();
-
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonList = gson.toJson(task2.getFromString(task2.readDateFromFile()));
         System.out.println("jsonList = " + jsonList);
         task2.saveToJson(jsonList, Path.of("users.json"));
 
     }
-
 }
 
 
